@@ -6,6 +6,7 @@ body {
   padding: 50px;
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .swords_wrapp {
@@ -18,11 +19,10 @@ body {
   width: 20px;
   height: 5px;
   margin-bottom: 50px;
-  transition: all 1s;
+  transition: all 1.5s;
 }
 
 .sword:first-child {
-  visibility: hidden;
   opacity: 0;
 }
 
@@ -61,7 +61,6 @@ body {
 }
 
 .swords_wrapp:hover .sword:first-child {
-  visibility: visible;
   opacity: 1;
 }
 

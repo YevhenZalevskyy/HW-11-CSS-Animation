@@ -1,0 +1,52 @@
+.section1 {
+padding-bottom: 250px;
+}
+
+.newton_wrapp {
+  border-top: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+
+}
+
+.ball:first-child {
+  animation-name: first;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+.ball:last-child {
+  animation-name: last;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+.ball::after {
+   content: " ";
+   position: relative;
+   width: 40px;
+   height: 40px;
+   border-radius: 20px;
+   background: #fff;
+   display: block;
+   top: 200px;
+   right: 20px;
+
+}
+
+@keyframes first {
+  0% {transform: rotate(45deg);}
+  25% {transform: rotate(0deg);}
+  75% {transform: rotate(0deg);}
+  100% {transform: rotate(45deg);}
+}
+
+@keyframes last {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(0deg);}
+  50% {transform: rotate(-45deg);}
+  75% {transform: rotate(0deg);}
+  100% {transform: rotate(0deg);}
+}

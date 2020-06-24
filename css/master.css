@@ -1,0 +1,95 @@
+body {
+  background: #000;
+}
+
+.section {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.swords_wrapp {
+  width: 100px;
+
+}
+
+.sword {
+  background: rgb(38, 39, 45);
+  width: 20px;
+  height: 5px;
+  margin-bottom: 50px;
+  transition: all 1s;
+}
+
+.sword:first-child {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.sword:nth-child(2) {
+  transform: rotate(225deg);
+  position: relative;
+  right: -70px;
+  top: 35px;
+}
+
+.sword::before {
+  content:" ";
+  width: 30px;
+  height: 5px;
+  background: #fff;
+  display: block;
+  left: -30px;
+  position: relative;
+}
+
+.sword::after {
+  content:" ";
+  width: 100px;
+  height: 5px;
+  background: #fff;
+  display: block;
+  left: 20px;
+  top: -5px;
+  position: relative;
+}
+
+.sword:last-child {
+  transform: rotate(-45deg)
+             translateX(20px)
+             translateY(-10px);
+}
+
+.swords_wrapp:hover .sword:first-child {
+  visibility: visible;
+  opacity: 1;
+}
+
+.swords_wrapp:hover .sword:nth-child(2) {
+  transform: rotate(180deg)
+             translateY(35px);
+}
+
+.swords_wrapp:hover .sword:last-child {
+  transform: rotate(0deg)
+             translateX(0px)
+             translateY(0px);
+}
+
+.swords_wrapp:hover .sword:last-child::after {
+  animation: shadow1 1.5s;
+}
+
+.swords_wrapp:hover .sword:nth-child(2)::after {
+  animation: shadow2 1.5s;
+}
+
+@keyframes shadow1 {
+  from {box-shadow: 0 0 20px 10px rgb(105, 98, 193);}
+  to {box-shadow: 0 0 0 0 #000;}
+}
+
+@keyframes shadow2 {
+  from {box-shadow: 0 0 20px 10px rgb(98, 193, 113);}
+  to {box-shadow: 0 0 0 0 #000;}
+}
